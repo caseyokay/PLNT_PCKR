@@ -1,0 +1,4 @@
+<h1>RANDOM PLANTS INDEX</h1>
+<% @plants.each do |plant| %>
+<p> <%= link_to plant.name, plant_path(plant)%> </p>
+<% end %>

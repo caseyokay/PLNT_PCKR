@@ -1,0 +1,10 @@
+<h1>The Plant </h1>
+
+  <% if flash[:success] %>
+    <h2 style="color:green;"><%= flash[:success] %></h2>
+  <% end %>
+
+  <h3><%= @plant.name %></h3>
+  <p> Height: <%= @plant.height %></p>
+  <p> Light: <%= @plant.light %></p>
+  <p> Water Frequency: <%= @plant.water_frequency %></p>
