@@ -4,7 +4,13 @@
     <h2 style="color:green;"><%= flash[:success] %></h2>
   <% end %>
 
-  <h3><%= @plant.name %></h3>
+  <h3><%= @plant.scientific_name %></h3>
   <p> Height: <%= @plant.height %></p>
   <p> Light: <%= @plant.light %></p>
-  <p> Water Frequency: <%= @plant.water_frequency %></p>
+  <img src="<%=@plant.image_url%>" alt="<%= @plant.scientific_name %>">
+
+
+  <%= button_to "Abandon Plant :( ", plant_path(@plant), method: :delete %>
+
+ 
+  <%= button_to "Go to Profile Page", user_path(@user), method: :get %>

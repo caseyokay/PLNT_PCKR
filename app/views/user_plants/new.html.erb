@@ -1,0 +1,12 @@
+<h1>Lets get you a new plant!</h1>
+
+<%= form_for @user_plant do |f| %>
+  <%= f.label :user_id %>
+  <%= f.collection_select :user_id, @users, :id, :name  %>
+
+  <%= f.label :plant_id %>
+  <%= f.collection_select :plant_id, @plants, :id, :scientific_name %>
+
+  <%= f.submit %>
+
+<% end %>

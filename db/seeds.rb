@@ -6,7 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require "json"
+require 'httparty'
 
-10.times do
-    Plant.create(name: Faker::Cannabis.brand, height: rand(0..50), water_frequency: 'high', light: rand(0..10))
-end
+Plant.destroy_all
+
+response = HTTParty.get('https://trefle.io/api/v1/plants',query: {"token": "a4_zn3CJvpfNeaaTRNhiXFgPDN0kYFItZzPT-KtRAJg"})
+
+ruby_hash = JSON.parse(response.body)
+
+ruby_hash["data"].each do |plant|
+        Plant.create(scientific_name: plant["scientific_name"], height: rand(0..50), light: rand(0..10), image_url: plant["image_url"])
+    end
+

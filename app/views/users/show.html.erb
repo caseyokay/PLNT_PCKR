@@ -1,1 +1,23 @@
-<h1>User Show</h1>
+<h1>Hi, <%= @user.name %>! Here is your info:</h1>
+  <h3><%= @user.name %></h3>
+  <p> Email Address: <%= @user.email %></p>
+  
+
+<%# <% def plants%>
+<%# <% UserPlants.all  do |up| %>
+<%# <% if up.user_id == self %> 
+
+<%# <%end%> 
+
+<h2>These are your plants! </h2>  
+
+<% @user.plants.each do |plant| %>
+  <p><%= link_to plant.scientific_name, plant_path(plant) %></p>
+<% end %>
+
+
+
+  <%= button_to "Return to Welcome Page", root_path, method: :get %>
+  <%= button_to "Return to Index", users_path(@user), method: :get %>
+
+

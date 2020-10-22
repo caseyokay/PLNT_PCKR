@@ -1,16 +1,19 @@
-<h1> WELCOME TO PLNT PCKR! </h1>
+<h1> welcome to plnt pckr </h1>
 
-<p> Hi welcome text, description </p>
+<p> hi there, welcome to plnt pckr, the app that picks your plants. </p>
 
-<h2 class="small-caps">Login</h2>
+<h2 class="small-caps">login</h2>
         <%= form_tag(sessions_path, html: {class:"form-group"}) do %>
             <%= label_tag :email%>
             <%= text_field_tag :email, '', class:"form-control" %><br>
             <%= label_tag :password %>
             <%= password_field_tag :password, '', class:"form-control" %><br>
-            <%= submit_tag :"Login", class:"btn btn-primary" %>
+            <%= submit_tag :"login", class:"btn btn-primary" %>
         <% end %>
     </div>
+<br>
+<br>
+<br>
 
-    <p class="vertical-align"><%= link_to "Sign Up", new_user_path %></p>
-  
+<h4>or.. sign up:</h4>
+      <%= button_to "sign up", new_user_path, method: :get %>

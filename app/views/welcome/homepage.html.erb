@@ -1,4 +1,18 @@
 
 <h1>Welcome!</h1>
 <p>Would you like to add a plant to your care?</p>
+<%# <p class="vertical-align"><%= link_to "Click here for a new plant!", new_user_plant_path %>
+  <%= button_to "New Plant Please", new_user_plant_path, method: :get %>
+
+
+<p>Would you like to see the plants you're caring for?</p>
+<%# <p class="vertical-align"><%= link_to "Click here to see your plants!", index_user_path %></p>
+  
+  <%= button_to "Visit the Index", users_path(@user), method: :get %>
+
+  <p>  <%= button_to "Return to Login", login_path, method: :get %> </p>
+
+
+
+
 

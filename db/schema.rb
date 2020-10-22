@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(version: 2020_10_19_223234) do
 
   create_table "plants", force: :cascade do |t|
-    t.string "name"
+    t.string "scientific_name"
     t.integer "height"
     t.integer "light"
-    t.string "water_frequency"
+    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
